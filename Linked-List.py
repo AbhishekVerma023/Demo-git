@@ -31,3 +31,11 @@ class LinkedList(object):
             newNode = Node(data)
             newNode.next = self.head
             self.head = newNode
+
+    # inserting at the end of linked list
+    def insertAtEnd(self, data):
+        newNode = Node(data)
+        temp = self.head
+        while(temp.next != None):         
+            temp = temp.next
+        temp.next = newNode
