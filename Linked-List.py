@@ -90,3 +90,19 @@ class LinkedList(object):
             temp = temp.next
 
 
+if __name__ == '__main__':
+    List = LinkedList()
+    List.head = Node(1)                # create the head node
+    node2 = Node(2)
+    List.head.setNext(node2)           # head node's next --> node2
+    node3 = Node(3)
+    node2.setNext(node3)               # node2's next --> node3
+    List.insertAtStart(4)              # node4's next --> head-node --> node2 --> node3
+    List.insertBetween(node2, 5)       # node2's next --> node5
+    List.insertAtEnd(6)
+    List.printLinkedList()
+    print()
+    List.delete(3)
+    List.printLinkedList()
+    print()
+    print(List.search(List.head, 1))
