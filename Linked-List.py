@@ -39,7 +39,17 @@ class LinkedList(object):
         while(temp.next != None):         
             temp = temp.next
         temp.next = newNode
-        
+
+    # inserting the node in between the linked list (after a specific node)
+    def insertBetween(self, previousNode, data):
+        if (previousNode.next is None):
+            print('Previous node should have next node!')
+        else:
+            newNode = Node(data)
+            newNode.next = previousNode.next
+            previousNode.next = newNode
+
+
     # deleting an item based on data(or key)
     def delete(self, data):
         temp = self.head
@@ -78,3 +88,5 @@ class LinkedList(object):
         while(temp):
             print(temp.data, end=' ')
             temp = temp.next
+
+
