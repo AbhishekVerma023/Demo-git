@@ -56,14 +56,14 @@ class LinkedList(object):
                         break
                     prev = temp          #save current node as previous so that we can go on to next node
                     temp = temp.next
-​
+
                 # node not found
                 if temp == None:
                     return
-​
+
                 prev.next = temp.next
                 return
-​
+
     # iterative search
     def search(self, node, data):
         if node == None:
@@ -71,3 +71,10 @@ class LinkedList(object):
         if node.data == data:
             return True
         return self.search(node.getNext(), data)
+
+    # printing the data in the linked list
+    def printLinkedList(self):
+        temp = self.head
+        while(temp):
+            print(temp.data, end=' ')
+            temp = temp.next
